@@ -111,3 +111,12 @@ input[type="checkbox"] {
     background: #ffeaa7;
     border-left-color: #d35400;
 } 
+.imagem {
+    text-align: center; 
+    margin-top: 20px;
+}
+.imagem > .logica {
+    max-width: 100%; 
+    height: auto;
+}
+
