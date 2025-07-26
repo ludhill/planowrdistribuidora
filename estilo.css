@@ -1,0 +1,113 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffeaa7 10%, #fab1a0 30%, #74b9ff 55%, #55efc4 75%, #ffeaa7 95%);
+    background-size: 100% 300%;
+    animation: gradientFlow 15s ease infinite;
+    color: #2d3436;
+}
+
+@keyframes gradientFlow {
+
+    0%,
+    100% {
+        background-position: top;
+    }
+
+    50% {
+        background-position: center;
+    }
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #0984e3;
+    margin-bottom: 2rem;
+}
+
+.accordion {
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+    background: #74b9ff;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: #0984e3;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #f7f9fc;
+    transition: max-height 0.4s ease;
+    padding: 0 1rem;
+}
+
+.accordion.active .accordion-content {
+    /* max-height: 1000px; */
+    max-height: 90%;
+    padding: 1rem;
+}
+
+.card {
+    background: #ffffff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 4px solid #0984e3;
+    border-radius: 6px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #636e72;
+}
+
+.card ul {
+    padding-left: 1rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #0984e3;
+}
+
+.improvements {
+    background: #ecf0f1;
+    padding: 0.5rem;
+    border-left: 3px dashed #0984e3;
+    margin-top: 0.6rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dashboard .card {
+    background: #ffeaa7;
+    border-left-color: #d35400;
+} 
