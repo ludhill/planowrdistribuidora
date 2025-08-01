@@ -46,3 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+async function carregarPagina(nome) {
+    try {
+        const resposta = await fetch(`pages/${nome}.html`);
+        const html = await resposta.text();
+        document.getElementById('conteudo').innerHTML = html;
+    } catch (erro) {
+        document.getElementById('conteudo').innerHTML = `<p>Erro ao carregar a página: ${erro}</p>`;
+    }
+}
