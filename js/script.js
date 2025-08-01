@@ -46,27 +46,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
- 
-function carregarPagina(nome) {
-  fetch(`pages/${nome}.html`)
-    .then(res => res.text())
-    .then(html => {
-      const destino = document.getElementById('conteudo');
-      destino.innerHTML = html;
 
-      // reprocessa scripts
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = html;
-      tempDiv.querySelectorAll('script').forEach(script => {
-        const novoScript = document.createElement('script');
-        if (script.src) {
-          novoScript.src = script.src;
+async function carregarPagina(nome) {
+    try {
+    const resposta = await fetch(`pages/${nome}.html`);
+    const html = await resposta.text();
+    document.getElementById('conteudo').innerHTML = html;
+
+    // Reexecuta scripts da página (se necessário)
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    temp.querySelectorAll('script').forEach(orig => {
+        const novo = document.createElement('script');
+        if (orig.src) {
+        novo.src = orig.src;
         } else {
-          novoScript.textContent = script.textContent;
+        novo.textContent = orig.textContent;
         }
-        document.body.appendChild(novoScript);
-      });
+        document.body.appendChild(novo);
     });
+    } catch (erro) {
+    document.getElementById('conteudo').innerHTML = `<p>Erro ao carregar: ${erro}</p>`;
+    }
 }
+
+// ⬅️ Aqui carregamos o restaurante como padrão assim que a página abre
+window.addEventListener('DOMContentLoaded', () => {
+    carregarPagina('restaurante');
+});
 
 
