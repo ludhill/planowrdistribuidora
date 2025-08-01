@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+    <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Jornada de compra</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="title" content="Parnamirim, RN, nordeste" />
-    <meta name="author" content="Lucas denner" />
-    <meta name="generator" content="Parnamirim-RN" />
-    <link rel="icon" href="/assessoriajornadacompra/img/spaghetti.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/assessoriajornadacompra/css/estilo.css" />
-</head>
+        <head>
+            <meta charset="UTF-8" />
+            <title>Jornada de compra</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="title" content="Parnamirim, RN, nordeste" />
+            <meta name="author" content="Lucas denner" />
+            <meta name="generator" content="Parnamirim-RN" />
+            <link rel="icon" href="./img/spaghetti.ico" type="image/x-icon" />
+            <link rel="stylesheet" href="./css/estilo.css" />
+        </head>
 
-<body>
+        <body>
+            <section class="" style="opacity: 0;">
+                <h1>🍝 Assessoria Jornada de Compra</h1>
+                <p>Parnamirim, RN, nordeste</p>
+                <h1>📍 Escolha o conteúdo que deseja visualizar</h1>
 
-    <h1>📍 Escolha o conteúdo que deseja visualizar</h1>
+                <!-- Botões de navegação -->
+                <button onclick="carregarPagina('restaurante')">Restaurante</button>
+                <button onclick="carregarPagina('distribuidora')">Distribuidora</button>
 
-    <!-- Botões de navegação -->
-    <button onclick="carregarPagina('restaurante')">Restaurante</button>
-    <button onclick="carregarPagina('distribuidora')">Distribuidora</button>
-
-    <!-- Área de conteúdo -->
-    <div id="conteudo" style="margin-top: 20px;"></div>
- 
-    <script src="/assessoriajornadacompra/js/script.js"></script>
-
-    <div id="improvementModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-header">
-                <h3>💡 Oportunidade de Melhoria</h3>
+            </section>
+            
+            <div class="container"> 
+                <div id="conteudo" style="margin-top: 20px;"></div>
             </div>
-            <div class="modal-body">
-                <p id="modal-text"></p>
+
+            <script src="./js/script.js"></script>
+
+            <div id="improvementModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div class="modal-header">
+                        <h3>💡 Oportunidade de Melhoria</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-text"></p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </body>
 
-    </div>
-</body>
-
-</html>
+    </html>
