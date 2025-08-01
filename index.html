@@ -3,31 +3,29 @@
 
         <head>
             <meta charset="UTF-8" />
-            <title>Jornada de compra</title>
+            <title>Jornada de Compra</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="title" content="Parnamirim, RN, nordeste" />
-            <meta name="author" content="Lucas denner" />
+            <meta name="author" content="Lucas Denner" />
             <meta name="generator" content="Parnamirim-RN" />
             <link rel="icon" href="./img/spaghetti.ico" type="image/x-icon" />
             <link rel="stylesheet" href="./css/estilo.css" />
         </head>
 
         <body>
-            <section class="" style="opacity: 0.1; border: 1px solid #ccc; padding: 2px;">
+            <section style="opacity: 0.1; border: 1px solid #ccc; padding: 2px;">
                 <p>🍝 Assessoria Jornada de Compra</p>
                 <p>Parnamirim, RN, nordeste</p>
                 <p>📍 Escolha o conteúdo que deseja visualizar</p>
                 <button onclick="carregarPagina('restaurante')">Restaurante</button>
                 <button onclick="carregarPagina('distribuidora')">Distribuidora</button>
-
             </section>
-            
-            <div class="container"> 
+
+            <div class="container">
                 <div id="conteudo" style="margin-top: 20px;"></div>
             </div>
 
-            <script src="./js/script.js"></script>
-
+            <!-- Modal padrão global -->
             <div id="improvementModal" class="modal">
                 <div class="modal-content">
                     <span class="close-btn">&times;</span>
@@ -39,6 +37,8 @@
                     </div>
                 </div>
             </div>
+
+            <script src="./js/script.js"></script>
         </body>
 
     </html>

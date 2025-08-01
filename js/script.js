@@ -48,31 +48,31 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function carregarPagina(nome) {
-    try {
+  try {
+    // 1. Carrega o HTML
     const resposta = await fetch(`pages/${nome}.html`);
     const html = await resposta.text();
     document.getElementById('conteudo').innerHTML = html;
 
-    // Reexecuta scripts da página (se necessário)
+    // 2. Reexecuta scripts embutidos (caso existam no HTML)
     const temp = document.createElement('div');
     temp.innerHTML = html;
     temp.querySelectorAll('script').forEach(orig => {
-        const novo = document.createElement('script');
-        if (orig.src) {
+      const novo = document.createElement('script');
+      if (orig.src) {
         novo.src = orig.src;
-        } else {
+      } else {
         novo.textContent = orig.textContent;
-        }
-        document.body.appendChild(novo);
+      }
+      document.body.appendChild(novo);
     });
-    } catch (erro) {
+
+    // 3. Carrega script externo modular (se existir)
+    const scriptModular = document.createElement('script');
+    scriptModular.src = `pages/${nome}.js`;
+    scriptModular.defer = true; // apenas por segurança, executa depois da renderização
+    document.body.appendChild(scriptModular);
+  } catch (erro) {
     document.getElementById('conteudo').innerHTML = `<p>Erro ao carregar: ${erro}</p>`;
-    }
+  }
 }
-
-// ⬅️ Aqui carregamos o restaurante como padrão assim que a página abre
-window.addEventListener('DOMContentLoaded', () => {
-    carregarPagina('restaurante');
-});
-
-
