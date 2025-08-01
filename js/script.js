@@ -46,14 +46,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+ 
+function carregarPagina(nome) {
+  fetch(`pages/${nome}.html`)
+    .then(res => res.text())
+    .then(html => {
+      const destino = document.getElementById('conteudo');
+      destino.innerHTML = html;
 
-
-async function carregarPagina(nome) {
-    try {
-        const resposta = await fetch(`pages/${nome}.html`);
-        const html = await resposta.text();
-        document.getElementById('conteudo').innerHTML = html;
-    } catch (erro) {
-        document.getElementById('conteudo').innerHTML = `<p>Erro ao carregar a página: ${erro}</p>`;
-    }
+      // reprocessa scripts
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      tempDiv.querySelectorAll('script').forEach(script => {
+        const novoScript = document.createElement('script');
+        if (script.src) {
+          novoScript.src = script.src;
+        } else {
+          novoScript.textContent = script.textContent;
+        }
+        document.body.appendChild(novoScript);
+      });
+    });
 }
+
+
