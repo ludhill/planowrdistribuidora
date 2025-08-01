@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Negócios do Lucas</title>
-  <link rel="stylesheet" href="styles/main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Negócios do Lucas</title>
+    <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body> 
-  <header style="opacity: 0.1; border: 1px solid #ccc; padding: 2px;">
-    <p>🍝 Assessoria Jornada de Compra</p>
-    <p>Parnamirim, RN, nordeste</p>
-    <p>📍 Escolha o conteúdo que deseja visualizar</p>
-    <nav>
-      <ul>
-        <li><a href="restaurante" data-page="restaurante">🍝 Restaurante</a></li>
-        <li><a href="distribuidora" data-page="distribuidora">🏍️ Distribuidora</a></li>
-      </ul>
-    </nav>
-  </header> 
+
+<body>
+    <header style="opacity: 0.1; border: 1px solid #ccc; padding: 2px;">
+        <p>🍝 Assessoria Jornada de Compra</p>
+        <p>Parnamirim, RN, nordeste</p>
+        <p>📍 Escolha o conteúdo que deseja visualizar</p>
+        <nav>
+            <ul>
+                <li><a href="#restaurante" data-page="restaurante">🍝 Restaurante</a></li>
+                <li><a href="#distribuidora" data-page="distribuidora">🏍️ Distribuidora</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-  <main id="content">
-    <p>👋 Escolha uma das opções acima para começar.</p>
-  </main>
+    <!-- <main id="content">
+        <p>👋 Escolha uma das opções acima para começar.</p>
+    </main> -->
 
-  <!-- Modal container -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <p id="modal-text"></p>
+    <div id="conteudo"></div>
+
+    <!-- Modal container -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p id="modal-text"></p>
+        </div>
     </div>
-  </div>
 
-  <script src="scripts/router.js"></script>
-  <script src="scripts/components.js"></script>
+    <script src="scripts/router.js"></script>
+    <script src="scripts/components.js"></script>
+    <script>
+        function carregarPagina(pagina) {
+            const container = document.getElementById('conteudo');
+            fetch(`${pagina}.html`)
+                .then(res => res.text())
+                .then(html => container.innerHTML = html)
+                .catch(() => container.innerHTML = '<p>Página não encontrada.</p>');
+        }
+
+        window.addEventListener('hashchange', () => {
+            const pagina = location.hash.replace('#', '');
+            carregarPagina(pagina);
+        });
+
+        window.addEventListener('load', () => {
+            const paginaInicial = location.hash.replace('#', '') || 'inicio';
+            carregarPagina(paginaInicial);
+        });
+    </script> 
 </body>
+
 </html>
