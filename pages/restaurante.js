@@ -1,3 +1,4 @@
+console.log('restaurante.js carregado');
 document.addEventListener('DOMContentLoaded', () => {
   // Acordeons
   const accordions = document.querySelectorAll('.accordion');

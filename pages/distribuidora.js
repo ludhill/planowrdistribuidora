@@ -1,3 +1,4 @@
+console.log('distribuidora.js carregado');
 document.addEventListener('DOMContentLoaded', () => {
   // Botões de melhoria (modal)
   const modal = document.getElementById('improvementModal');
