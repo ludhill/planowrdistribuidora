@@ -1,24 +1,21 @@
 console.log('restaurante.js carregado');
 
-// 🧩 Acordeons
-const accordions = document.querySelectorAll('.accordion');
-accordions.forEach(accordion => {
+// Acordeons
+document.querySelectorAll('.accordion')?.forEach(accordion => {
   const header = accordion.querySelector('.accordion-header');
   header?.addEventListener('click', () => {
-    accordions.forEach(other => {
-      if (other !== accordion) other.classList.remove('active');
-    });
+    document.querySelectorAll('.accordion.active')?.forEach(a => a.classList.remove('active'));
     accordion.classList.toggle('active');
   });
 });
 
-// 📦 Modal de melhoria
+// Modal
 const modal = document.getElementById('improvementModal');
 const modalText = document.getElementById('modal-text');
 const closeBtn = document.querySelector('.close-btn');
 const openBtns = document.querySelectorAll('.open-modal-btn');
 
-openBtns.forEach(btn => {
+openBtns?.forEach(btn => {
   btn.addEventListener('click', () => {
     modalText.textContent = btn.getAttribute('data-improvement');
     modal.style.display = 'block';
