@@ -18,131 +18,91 @@
         <h1>🍝 Restaurante Show de Massas – Jornada & Dashboard</h1>
 
 
-        <div class="accordion" id="Jornada">
+        <div class="accordion" id="Desafios">
             <div class="accordion-header" style="width: 75%;">⚔️ Desafios do Show de Massas</div>
             <div class="accordion-content">
                 <div class="card">
                     <h3>🔎 Desafios</h3>
-                    <label><input type="checkbox" />
+
+                    <label>
+                        <input type="checkbox" id="toggleCarrossel1" />
                         Publicidade Local: "Show de massas não é só mais uma"
                     </label>
-                    <div style="justify-self: center;"><button class="open-modal-btn"
+
+                    <div style="justify-self: center;">
+                        <button class="open-modal-btn"
                             data-improvement="Primeiro, se destacar na publicidade local, fazendo com que as pessoas aqui em Natal entendam que a sua massa não é só mais uma, mas uma autêntica experiência artesanal..">💡
-                            Oportunidade de Melhoria</button></div>
+                            Oportunidade de Melhoria
+                        </button>
+                    </div>
 
-                    <hr />
-                    <div class="accordion" id="publicidade">
-                        <div class="accordion-header" style="width: 25%;"></div>
-                        <div class="accordion-content">
-                            <div class="carrossel">
-
-                                <button class="prev">&#10094;</button>
-
-                                <div class="carrossel-imagens">
-                                    <img src="./refatoracao/img/1a.png" alt="Publicidade Local 1">
-                                    <img src="./refatoracao/img/1b.png" alt="Publicidade Local 2">
-                                    <img src="./refatoracao/img/1c.png" alt="Publicidade Local 3">
-                                </div>
-
-                                <button class="next">&#10095;</button>
+                    <div id="carrosselWrapper1" class="carrossel-wrapper hidden">
+                        <div class="carrossel">
+                            <button class="prev">&#10094;</button>
+                            <div class="carrossel-imagens">
+                                <img src="./refatoracao/img/1a.png" alt="Publicidade Local 1" />
+                                <img src="./refatoracao/img/1b.png" alt="Publicidade Local 2" />
+                                <img src="./refatoracao/img/1c.png" alt="Publicidade Local 3" />
                             </div>
+                            <button class="next">&#10095;</button>
                         </div>
                     </div>
 
                     <hr />
-                    <div class="accordion" id="promocoes">
-                        <div class="accordion-header" style="width: 25%;"></div>
-                        <div class="accordion-content">
-                            <label><input type="checkbox" />
-                                Promoções e Ofertas
-                            </label>
-                            <div style="justify-self: center;"><button class="open-modal-btn"
-                                    data-improvement="Segundo, criar promoções e ofertas que não só atraiam clientes novos, mas que façam os atuais se sentirem valorizados e voltarem sempre.">💡
-                                    Oportunidade de Melhoria</button></div>
-                            <div class="carrossel">
-                                <button class="prev">&#10094;</button>
-                                <hr />
-                                <div class="carrossel-imagens">
-                                    <img src="./refatoracao/img/2a.png" alt="Promoções e Ofertas 1">
-                                    <img src="./refatoracao/img/2b.png" alt="Promoções e Ofertas 2">
-                                    <img src="./refatoracao/img/2c.png" alt="Promoções e Ofertas 3">
-                                </div>
 
-                                <button class="next">&#10095;</button>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <label><input type="checkbox" />
-                        Gestão de Avaliações Online
+                    <label>
+                        <input type="checkbox" id="toggleCarrossel2" />
+                        Promoções e Ofertas: "Promoções que atraem e fidelizam"
                     </label>
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Impulsionar parcerias com influenciadores de gastronomia e hotéis locais para aumentar o alcance.">💡
-                            Oportunidade de Melhoria</button></div>
-                    <hr />
-                    <div class="accordion" id="online">
-                        <div class="accordion-header" style="width: 25%;"></div>
-                        <div class="accordion-content">
-                            <div class="carrossel">
-                                <button class="prev">&#10094;</button>
 
-                                <div class="carrossel-imagens">
-                                    <img src="./refatoracao/img/3a.png" alt="Gestão de Avaliações Online 1">
-                                    <img src="./refatoracao/img/3b.png" alt="Gestão de Avaliações Online 2">
-                                    <img src="./refatoracao/img/3c.png" alt="Gestão de Avaliações Online 3">
-                                </div>
+                    <div style="justify-self: center;">
+                        <button class="open-modal-btn"
+                            data-improvement="Segundo, criar promoções e ofertas que não só atraiam clientes novos, mas que façam os atuais se sentirem valorizados e voltarem sempre.">💡
+                            Oportunidade de Melhoria
+                        </button>
+                    </div>
 
-                                <button class="next">&#10095;</button>
+                    <div  id="carrosselWrapper2" class="carrossel-wrapper hidden">
+                        <div class="carrossel">
+                            <button class="prev">&#10094;</button>
+                            <div class="carrossel-imagens">
+                                <img src="./refatoracao/img/2a.png" alt="Publicidade Local 1" />
+                                <img src="./refatoracao/img/2b.png" alt="Publicidade Local 2" />
+                                <img src="./refatoracao/img/2c.png" alt="Publicidade Local 3" />
                             </div>
+                            <button class="next">&#10095;</button>
                         </div>
                     </div>
+
+                    <hr />
+
+                    <label>
+                        <input type="checkbox" id="toggleCarrossel3" />
+                        Gestão de Avaliações Online: "Gerenciar a reputação online"
+                    </label>
+
+
+                    <div style="justify-self: center;">
+                        <button class="open-modal-btn"
+                            data-improvement="Impulsionar parcerias com influenciadores de gastronomia e hotéis locais para aumentar o alcance.">💡
+                            Oportunidade de Melhoria
+                        </button>
+                    </div>
+
+                    <div id="carrosselWrapper3" class="carrossel-wrapper hidden">
+                        <div class="carrossel">
+                            <button class="prev">&#10094;</button>
+                            <div class="carrossel-imagens">
+                                <img src="./refatoracao/img/3a.png" alt="Publicidade Local 1" />
+                                <img src="./refatoracao/img/3b.png" alt="Publicidade Local 2" />
+                                <img src="./refatoracao/img/3c.png" alt="Publicidade Local 3" />
+                            </div>
+                            <button class="next">&#10095;</button>
+                        </div>
+                    </div>
+
                     <hr />
                 </div>
-                <!-- <div class="card">
-                    <h3>🎯 Atração</h3>
-                    <p>Motivações para visitar ou entrar em contato:</p>
-                    <label><input type="checkbox" /> Atraído por fotos de alta qualidade dos pratos no
-                        Instagram</label><br />
-                    <label><input type="checkbox" /> Interessado em promoções (almoço executivo, noite
-                        temática)</label><br />
-                    <label><input type="checkbox" /> Busca um ambiente aconchegante para um jantar especial</label>
-                    <hr /><div style="justify-self: center;"><button class="open-modal-btn"
-                        data-improvement="Criar 'Noites Temáticas' (ex: Noite do Vinho) e menu degustação para gerar novas experiências e senso de urgência.">💡
-                        Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>📋 Pesquisa</h3>
-                    <p>Informações que ajudam na decisão:</p>
-                    <label><input type="checkbox" /> Consultou o cardápio online para ver opções e preços</label><br />
-                    <label><input type="checkbox" /> Leu as avaliações e comentários no Google Maps /
-                        TripAdvisor</label><br />
-                    <label><input type="checkbox" /> Verificou as fotos do ambiente e dos pratos postadas por outros
-                        clientes</label>
-                    <hr /><div style="justify-self: center;"><button class="open-modal-btn"
-                        data-improvement="Desenvolver um cardápio online interativo com histórias dos pratos e sugestões de harmonização com vinhos para enriquecer a pesquisa.">💡
-                        Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>🛒 Ação</h3>
-                    <p>Forma de compra:</p>
-                    <label><input type="checkbox" /> Fez uma reserva por WhatsApp ou telefone</label><br />
-                    <label><input type="checkbox" /> Foi diretamente ao restaurante (walk-in)</label><br />
-                    <label><input type="checkbox" /> Fez um pedido via aplicativo de delivery</label>
-                    <hr /><div style="justify-self: center;"><button class="open-modal-btn"
-                        data-improvement="Implementar um sistema de reservas simples e ágil via WhatsApp e otimizar o perfil nos aplicativos de delivery para reduzir a fricção.">💡
-                        Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>💬 Fidelização</h3>
-                    <p>Comportamento pós-venda:</p>
-                    <label><input type="checkbox" /> Retorna para novas refeições ou para levar
-                        amigos/família</label><br />
-                    <label><input type="checkbox" /> Deixou uma avaliação positiva online após a visita</label><br />
-                    <label><input type="checkbox" /> Começou a seguir o restaurante nas redes sociais</label>
-                    <hr /><div style="justify-self: center;"><button class="open-modal-btn"
-                        data-improvement="Criar o clube 'Amigos da Massa' com descontos progressivos e benefícios por indicação para incentivar a recompra e o marketing boca a boca.">💡
-                        Ver Melhoria</button></div>
-                </div> -->
             </div>
         </div>
 
@@ -190,7 +150,8 @@
                 <div class="card">
                     <h3>📋 Pesquisa</h3>
                     <p>Informações que ajudam na decisão:</p>
-                    <label><input type="checkbox" /> Consultou o cardápio online para ver opções e preços</label><br />
+                    <label><input type="checkbox" /> Consultou o cardápio online para ver opções e
+                        preços</label><br />
                     <label><input type="checkbox" /> Leu as avaliações e comentários no Google Maps /
                         TripAdvisor</label><br />
                     <label><input type="checkbox" /> Verificou as fotos do ambiente e dos pratos postadas por outros
@@ -216,7 +177,8 @@
                     <p>Comportamento pós-venda:</p>
                     <label><input type="checkbox" /> Retorna para novas refeições ou para levar
                         amigos/família</label><br />
-                    <label><input type="checkbox" /> Deixou uma avaliação positiva online após a visita</label><br />
+                    <label><input type="checkbox" /> Deixou uma avaliação positiva online após a
+                        visita</label><br />
                     <label><input type="checkbox" /> Começou a seguir o restaurante nas redes sociais</label>
                     <hr />
                     <div style="justify-self: center;"><button class="open-modal-btn"
@@ -321,7 +283,8 @@
             <div class="accordion-content">
                 <div class="card">
                     <h3>🎯 1. Consultor de Marketing Estratégico</h3>
-                    <p>Responsável por alinhar a estratégia de marketing com os objetivos de negócio do restaurante.</p>
+                    <p>Responsável por alinhar a estratégia de marketing com os objetivos de negócio do restaurante.
+                    </p>
                     <p>Usa os planos gerados para orientar toda a equipe.</p>
                     <hr />
                     <div style="justify-self: center;"><button class="open-modal-btn"
@@ -340,7 +303,8 @@
                 </div>
                 <div class="card">
                     <h3>🧠 3. Copywriter</h3>
-                    <p>Cria textos persuasivos para anúncios, posts e cardápio que despertam o desejo de experimentar os
+                    <p>Cria textos persuasivos para anúncios, posts e cardápio que despertam o desejo de
+                        experimentar os
                         pratos.</p>
                     <hr />
                     <div style="justify-self: center;"><button class="open-modal-btn"
@@ -359,7 +323,8 @@
                 </div>
                 <div class="card">
                     <h3>📲 5. Social Media</h3>
-                    <p>Planeja e publica o conteúdo, interagindo com a comunidade e respondendo avaliações online.</p>
+                    <p>Planeja e publica o conteúdo, interagindo com a comunidade e respondendo avaliações online.
+                    </p>
                     <hr />
                     <div style="justify-self: center;"><button class="open-modal-btn"
                             data-improvement="Valor Médio Mensal: R$ 900. Inclui agendamento de posts, interação com seguidores e gestão básica da reputação online.">💡
@@ -376,7 +341,8 @@
                 </div>
                 <div class="card">
                     <h3>🧑‍💻 7. Implementador de Automação</h3>
-                    <p>Configura o chatbot inicial no WhatsApp para responder dúvidas comuns e agilizar as reservas.</p>
+                    <p>Configura o chatbot inicial no WhatsApp para responder dúvidas comuns e agilizar as reservas.
+                    </p>
                     <hr />
                     <div style="justify-self: center;"><button class="open-modal-btn"
                             data-improvement="Valor Médio da Configuração Inicial: R$ 450. Inclui a criação do fluxo de perguntas e respostas principais para o atendimento automatizado.">
@@ -398,7 +364,8 @@
                 <p style="text-align: center; font-style: italic; color: #636e72; font-size: 20px;">
                     O <strong>Assessor de Jornada de Compra</strong> atua como maestro, suprindo todas essas
                     necessidades,
-                    garantindo o profissionalismo, seguindo a mesma estratégia para transformar a experiência do cliente
+                    garantindo o profissionalismo, seguindo a mesma estratégia para transformar a experiência do
+                    cliente
                     e
                     gerar mais <strong>Resultados</strong> para o restaurante Show de Massas.
                 </p>
@@ -439,7 +406,8 @@
                         <p>45%</p>
                     </div>
                 </div>
-                <p style="justify-self: center;">📈 estimativa de metricas 3~6 meses de atuação do assessor de jornada
+                <p style="justify-self: center;">📈 estimativa de metricas 3~6 meses de atuação do assessor de
+                    jornada
                     de compra</p>
             </div>
         </div>

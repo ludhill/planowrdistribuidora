@@ -48,24 +48,38 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const imagens = document.querySelector('.carrossel-imagens');
-  const total = imagens.children.length;
-  let index = 0;
+  // Localiza todos os blocos de carrossel
+  document.querySelectorAll('.carrossel-wrapper').forEach((wrapper, i) => {
+    const checkbox = document.getElementById(`toggleCarrossel${i + 1}`);
+    const container = wrapper.querySelector('.carrossel-imagens');
+    const nextBtn = wrapper.querySelector('.next');
+    const prevBtn = wrapper.querySelector('.prev');
+    let index = 0;
+    const total = container?.children.length || 0;
 
-  document.querySelector('.next').addEventListener('click', () => {
-    index = (index + 1) % total;
-    atualizarCarrossel();
+    // Controle de exibição
+    checkbox?.addEventListener('change', () => {
+      wrapper.classList.toggle('hidden', !checkbox.checked);
+    });
+
+    // Navegação
+    nextBtn?.addEventListener('click', () => {
+      index = (index + 1) % total;
+      atualizarCarrossel();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      atualizarCarrossel();
+    });
+
+    // Função de atualização de posição
+    function atualizarCarrossel() {
+      const largura = container.clientWidth;
+      container.style.transform = `translateX(-${index * largura}px)`;
+    }
+
+    window.addEventListener('resize', atualizarCarrossel);
   });
-
-  document.querySelector('.prev').addEventListener('click', () => {
-    index = (index - 1 + total) % total;
-    atualizarCarrossel();
-  });
-
-  function atualizarCarrossel() {
-    const largura = imagens.clientWidth;
-    imagens.style.transform = `translateX(-${index * largura}px)`;
-  }
-
-  window.addEventListener('resize', atualizarCarrossel);
 });
+
