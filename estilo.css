@@ -1,8 +1,18 @@
  body {
      font-family: 'Segoe UI', sans-serif;
      margin: 0;
-     padding: 0;
-     background: linear-gradient(to bottom, #ffeaa7 10%, #fab1a0 30%, #74b9ff 55%, #55efc4 75%, #ffeaa7 95%);
+     padding: 0; 
+     /* Paleta focada em Aconchego e Tradição */
+     background: linear-gradient(to bottom,
+             #F4F1DE 10%,
+             /* Creme Quente */
+             #E27D60 35%,
+             /* Terracota Suave */
+             #8D5B4C 65%,
+             /* Marrom Amadeirado */
+             #8E8D62 90%
+             /* Verde Oliva */
+         );
      background-size: 100% 300%;
      animation: gradientFlow 15s ease infinite;
      color: #2d3436;
@@ -31,7 +41,7 @@
 
  h1 {
      text-align: center;
-     color: #0984e3;
+     color:  #F4F1DE 10%;
      margin-bottom: 2rem;
  }
 
@@ -43,7 +53,7 @@
  }
 
  .accordion-header {
-     background: #74b9ff;
+     background: #E27D60 35%;
      color: white;
      padding: 1rem;
      cursor: pointer;
@@ -53,7 +63,7 @@
  }
 
  .accordion-header:hover {
-     background: #0984e3;
+     background: #8D5B4C 65%;
  }
 
  .accordion-content {
@@ -74,7 +84,7 @@
      background: #ffffff;
      margin-bottom: 1rem;
      padding: 1rem;
-     border-left: 4px solid #0984e3;
+     border-left: 4px solid  #8D5B4C;
      border-radius: 6px;
  }
 
@@ -89,7 +99,7 @@
 
  input[type="checkbox"] {
      margin-right: 6px;
-     accent-color: #0984e3;
+     accent-color: #E27D60;
  }
 
  .dashboard {
@@ -118,8 +128,8 @@
 
  .open-modal-btn {
      background: #ecf0f1;
-     color: #0984e3;
-     border: 1px solid #74b9ff;
+     color: #E27D60;
+     border: 1px solid #E27D60;
      border-radius: 20px;
      padding: 5px 12px;
      cursor: pointer;
@@ -130,7 +140,7 @@
  }
 
  .open-modal-btn:hover {
-     background-color: #74b9ff;
+     background-color: #E27D60;
      color: white;
  }
 
@@ -151,7 +161,7 @@
      background: rgba(255, 255, 255, 0.98);
      margin: 15% auto;
      padding: 25px;
-     border-top: 5px solid #0984e3;
+     border-top: 5px solid #E27D60;
      /* Destaque com sua cor primária */
      width: 80%;
      max-width: 500px;
@@ -190,7 +200,7 @@
  }
 
  .modal-header h3 {
-     color: #0984e3;
+     color: #E27D60;
      margin-top: 0;
  }
 
@@ -201,7 +211,7 @@
 
  .open-modal-btn {
      background: #ecf0f1;
-     color: #0984e3;
+     color: #E27D60;
      border: 1px solid #74b9ff;
      border-radius: 20px;
      padding: 5px 12px;
@@ -213,7 +223,7 @@
  }
 
  .open-modal-btn:hover {
-     background-color: #74b9ff;
+     background-color: #E27D60;
      color: white;
  }
 
@@ -236,7 +246,7 @@
      background: rgba(255, 255, 255, 0.98);
      margin: 15% auto;
      padding: 25px;
-     border-top: 5px solid #0984e3;
+     border-top: 5px solid #E27D60;
      /* Destaque com sua cor primária */
      width: 80%;
      max-width: 500px;
@@ -275,7 +285,7 @@
  }
 
  .modal-header h3 {
-     color: #0984e3;
+     color: #E27D60;
      margin-top: 0;
  }
 
@@ -307,13 +317,15 @@
      border: none;
      border-radius: 8px;
  }
- 
+
  #conteudo {
-  transition: opacity 0.3s ease-in-out;
-}
-.fade-out {
-  opacity: 0;
-}
-.fade-in {
-  opacity: 1;
-}
+     transition: opacity 0.3s ease-in-out;
+ }
+
+ .fade-out {
+     opacity: 0;
+ }
+
+ .fade-in {
+     opacity: 1;
+ }
