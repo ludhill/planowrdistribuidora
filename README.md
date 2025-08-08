@@ -1,4 +1,4 @@
-
+Link da missão 2: https://ludhill.github.io/assessoriajornadacompra/encantodohorizonte.html
 ## 🏨 Encanto do Horizonte - Plano de Ação Estratégico
 
 #### 📝 Descrição do Projeto
