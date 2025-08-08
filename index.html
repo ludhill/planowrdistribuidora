@@ -1,488 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Jornada de compra</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="title" content="Parnamirim, RN, nordeste" />
-    <meta name="author" content="Lucas denner" />
-    <meta name="generator" content="Parnamirim-RN" />
-    <link rel="icon" href="spaghetti.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="estilo.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal - Experiências Digitais</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script> 
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Paleta de cores pastel adaptada do Encanto do Horizonte
+                        'primary-fundo': '#F5F0EB',          // Um tom de creme/bege claro (pastel)
+                        'secondary-fundo': '#E8F0F3',        // Um tom de azul claro/cinza (pastel)
+                        'verde-destaque': '#4CAF50',         // Verde primário para CTA e detalhes
+                        'verde-destaque-hover': '#66BB6A',   // Verde para hover dos botões
+                        'texto-escuro': '#3A3A3A',           // Texto principal para fundo claro
+                        'texto-claro': '#6A6A6A',            // Texto secundário e corpo para fundo claro
+                        'branco-puro': '#FFFFFF',            // Para textos em fundos escuros (ex: hero)
+                        'card-borda': '#D0D6D7'              // Borda sutil para os cards
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos personalizados */
+        .hero-index {
+            /* Imagem de fundo genérica para o menu principal */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/4CAF50/FFFFFF?text=Menu+Principal');
+            background-size: cover;
+            background-position: center;
+            height: 50vh; /* Altura ajustada para o menu */
+        }
+        .link-card {
+            transition: all 0.3s ease;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: #4CAF50; /* Verde destaque no hover */
+        }
+    </style>
 </head>
 
-<body>
-    <div class="container">
-        <h1>🍝 Restaurante Show de Massas – Jornada & Dashboard</h1>
+<body class="font-poppins antialiased bg-primary-fundo text-texto-claro">
 
+    <!-- Cabeçalho / Hero para o Menu Principal -->
+    <section class="hero-index flex items-center justify-center text-branco-puro rounded-b-xl shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Escolha sua Experiência</h1>
+            <p class="text-xl md:text-2xl lg:text-3xl font-semibold mb-8">Navegue pelas nossas propostas e descubra novos horizontes.</p>
+        </div>
+    </section>
 
-        <div class="accordion" id="Desafios">
-            <div class="accordion-header" style="width: 75%;">⚔️ Desafios do Show de Massas</div>
-            <div class="accordion-content">
-                <div class="card">
-                    <h3>🔎 Desafios</h3>
+    <!-- Seção de Links para as Landing Pages -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-texto-escuro text-center mb-12">Nossas Propostas em Destaque</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <!-- Card para Encanto do Horizonte -->
+                <a href="encantodohorizonte.html" class="block bg-secondary-fundo p-8 rounded-xl shadow-md link-card border border-card-borda text-center">
+                    <img src="https://placehold.co/400x250/F5F0EB/3A3A3A?text=Encanto+do+Horizonte" alt="Imagem do Hotel Encanto do Horizonte" class="rounded-lg mb-6 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-texto-escuro mb-3">Encanto do Horizonte</h3>
+                    <p class="text-texto-claro">Descubra uma experiência hoteleira única, focada em personalização e sustentabilidade.</p>
+                </a>
+                
+                <!-- Card para Show de Massas -->
+                <a href="showdemassas.html" class="block bg-secondary-fundo p-8 rounded-xl shadow-md link-card border border-card-borda text-center">
+                    <img src="https://placehold.co/400x250/E8F0F3/3A3A3A?text=Show+de+Massas" alt="Imagem do Show de Massas" class="rounded-lg mb-6 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-texto-escuro mb-3">Show de Massas</h3>
+                    <p class="text-texto-claro">Explore o sabor autêntico da culinária italiana com uma experiência gastronômica memorável.</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                    <label>
-                        <input type="checkbox" id="toggleCarrossel1" />
-                        Publicidade Local: "Show de massas não é só mais uma"
-                    </label>
-
-                    <div style="justify-self: center;">
-                        <button class="open-modal-btn"
-                            data-improvement="Primeiro, se destacar na publicidade local, fazendo com que as pessoas aqui em Natal entendam que a sua massa não é só mais uma, mas uma autêntica experiência artesanal..">💡
-                            Oportunidade de Melhoria
-                        </button>
-                    </div>
-
-                    <div id="carrosselWrapper1" class="carrossel-wrapper hidden">
-                        <div class="carrossel">
-                            <button class="prev">&#10094;</button>
-                            <div class="carrossel-imagens">
-                                <img src="./refatoracao/img/1a.png" alt="Publicidade Local 1" />
-                                <img src="./refatoracao/img/1b.png" alt="Publicidade Local 2" />
-                                <img src="./refatoracao/img/1c.png" alt="Publicidade Local 3" />
-                            </div>
-                            <button class="next">&#10095;</button>
-                        </div>
-                    </div>
-
-                    <hr />
-
-                    <label>
-                        <input type="checkbox" id="toggleCarrossel2" />
-                        Promoções e Ofertas: "Promoções que atraem e fidelizam"
-                    </label>
-
-                    <div style="justify-self: center;">
-                        <button class="open-modal-btn"
-                            data-improvement="Segundo, criar promoções e ofertas que não só atraiam clientes novos, mas que façam os atuais se sentirem valorizados e voltarem sempre.">💡
-                            Oportunidade de Melhoria
-                        </button>
-                    </div>
-
-                    <div  id="carrosselWrapper2" class="carrossel-wrapper hidden">
-                        <div class="carrossel">
-                            <button class="prev">&#10094;</button>
-                            <div class="carrossel-imagens">
-                                <img src="./refatoracao/img/2a.png" alt="Publicidade Local 1" />
-                                <img src="./refatoracao/img/2b.png" alt="Publicidade Local 2" />
-                                <img src="./refatoracao/img/2c.png" alt="Publicidade Local 3" />
-                            </div>
-                            <button class="next">&#10095;</button>
-                        </div>
-                    </div>
-
-                    <hr />
-
-                    <label>
-                        <input type="checkbox" id="toggleCarrossel3" />
-                        Gestão de Avaliações Online: "Gerenciar a reputação online"
-                    </label>
-
-
-                    <div style="justify-self: center;">
-                        <button class="open-modal-btn"
-                            data-improvement="Impulsionar parcerias com influenciadores de gastronomia e hotéis locais para aumentar o alcance.">💡
-                            Oportunidade de Melhoria
-                        </button>
-                    </div>
-
-                    <div id="carrosselWrapper3" class="carrossel-wrapper hidden">
-                        <div class="carrossel">
-                            <button class="prev">&#10094;</button>
-                            <div class="carrossel-imagens">
-                                <img src="./refatoracao/img/3a.png" alt="Publicidade Local 1" />
-                                <img src="./refatoracao/img/3b.png" alt="Publicidade Local 2" />
-                                <img src="./refatoracao/img/3c.png" alt="Publicidade Local 3" />
-                            </div>
-                            <button class="next">&#10095;</button>
-                        </div>
-                    </div>
-
-                    <hr />
+    <!-- Rodapé -->
+    <footer class="bg-secondary-fundo text-texto-claro py-8 rounded-t-xl mt-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2 text-texto-escuro">Experiências Digitais</h3>
+                    <p>Conectando você com o que importa.</p>
+                </div>
+                <div class="text-sm">
+                    © 2025 Experiências Digitais. Todos os direitos reservados.
                 </div>
             </div>
         </div>
-
-        <!-- Jornada do Cliente -->
-        <div class="accordion" id="5etapas">
-            <div class="accordion-header" style="width: 90%;">🗺️ 5 etapas</div>
-            <div class="accordion-content">
-                <div class="card">
-                    <div class="imagem">
-                        <img class="logica" src="como_acontece_uma_venda_by_gruporugido.png"
-                            alt="Imagem ilustrativa da jornada e dashboard" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion" id="Jornada">
-            <div class="accordion-header" style="width: 95%;">🧑‍🔧 Jornada do Cliente ( do Reustaurante)</div>
-            <div class="accordion-content">
-                <div class="card">
-                    <h3>🔎 Descoberta</h3>
-                    <p>Fontes de contato inicial:</p>
-                    <label><input type="checkbox" /> Encontrou no Google Maps procurando "restaurante
-                        italiano"</label><br />
-                    <label><input type="checkbox" /> Viu um anúncio geolocalizado nas redes sociais</label><br />
-                    <label><input type="checkbox" /> Recebeu indicação de amigos ou familiares</label>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Impulsionar parcerias com influenciadores de gastronomia e hotéis locais para aumentar o alcance.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>🎯 Atração</h3>
-                    <p>Motivações para visitar ou entrar em contato:</p>
-                    <label><input type="checkbox" /> Atraído por fotos de alta qualidade dos pratos no
-                        Instagram</label><br />
-                    <label><input type="checkbox" /> Interessado em promoções (almoço executivo, noite
-                        temática)</label><br />
-                    <label><input type="checkbox" /> Busca um ambiente aconchegante para um jantar especial</label>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Criar 'Noites Temáticas' (ex: Noite do Vinho) e menu degustação para gerar novas experiências e senso de urgência.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>📋 Pesquisa</h3>
-                    <p>Informações que ajudam na decisão:</p>
-                    <label><input type="checkbox" /> Consultou o cardápio online para ver opções e
-                        preços</label><br />
-                    <label><input type="checkbox" /> Leu as avaliações e comentários no Google Maps /
-                        TripAdvisor</label><br />
-                    <label><input type="checkbox" /> Verificou as fotos do ambiente e dos pratos postadas por outros
-                        clientes</label>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Desenvolver um cardápio online interativo com histórias dos pratos e sugestões de harmonização com vinhos para enriquecer a pesquisa.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>🛒 Ação</h3>
-                    <p>Forma de compra:</p>
-                    <label><input type="checkbox" /> Fez uma reserva por WhatsApp ou telefone</label><br />
-                    <label><input type="checkbox" /> Foi diretamente ao restaurante (walk-in)</label><br />
-                    <label><input type="checkbox" /> Fez um pedido via aplicativo de delivery</label>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Implementar um sistema de reservas simples e ágil via WhatsApp e otimizar o perfil nos aplicativos de delivery para reduzir a fricção.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>💬 Fidelização</h3>
-                    <p>Comportamento pós-venda:</p>
-                    <label><input type="checkbox" /> Retorna para novas refeições ou para levar
-                        amigos/família</label><br />
-                    <label><input type="checkbox" /> Deixou uma avaliação positiva online após a
-                        visita</label><br />
-                    <label><input type="checkbox" /> Começou a seguir o restaurante nas redes sociais</label>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Criar o clube 'Amigos da Massa' com descontos progressivos e benefícios por indicação para incentivar a recompra e o marketing boca a boca.">💡
-                            Ver Melhoria</button></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Jornada da Empresa -->
-        <div class="accordion" id="empresa">
-            <div class="accordion-header" style="width: 90%;">🏢 Jornada do Restaurante</div>
-            <div class="accordion-content">
-                <div class="card">
-                    <h3>Alcance</h3>
-                    <p>Campanhas geolocalizadas destacando o preparo artesanal e o ambiente.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Divulgação em guias gastronômicos locais e parcerias com perfis de turismo para atrair um público qualificado.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>Engajamento</h3>
-                    <p>Conteúdo em vídeo dos bastidores, enquetes sobre pratos e "dia a dia" do chef.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Realizar uma live mensal com o chef ensinando o segredo de um dos molhos para criar uma conexão autêntica com o público.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>Intenção Comercial</h3>
-                    <p>Cardápio sempre acessível e canal de reservas via WhatsApp ágil.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Implementar um chatbot no site e WhatsApp para responder dúvidas comuns (horários, pratos) e direcionar para reservas 24/7.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>Conversão</h3>
-                    <p>Experiência gastronômica memorável e processo de delivery eficiente.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Oferecer um 'mimo' (ex: mini sobremesa ou taça de vinho) para clientes que fazem reserva antecipada, incentivando o agendamento.">💡
-                            Ver Melhoria</button></div>
-                </div>
-                <div class="card">
-                    <h3>Fidelização</h3>
-                    <p>Cliente retorna pela qualidade consistente e pelo ambiente acolhedor.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Criar uma lista de transmissão exclusiva no WhatsApp para clientes fiéis, enviando novidades e ofertas especiais em primeira mão.">💡
-                            Ver Melhoria</button></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Roadmap -->
-        <div class="accordion" id="roadmap">
-            <div class="accordion-header" style="width: 80%;">📅 Roadmap do Prestador de Serviço</div>
-            <div class="accordion-content">
-                <div class="card">
-                    <h3>Semana 1-2</h3>
-                    <p>Campanha inicial de descoberta, conteúdo técnico e mídia geolocalizada.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Otimizar o Google Meu Negócio, realizar uma sessão de fotografia gastronômica profissional e iniciar a campanha de anúncios 'O Show da Massa' para construir a base da presença digital.">
-                            💡 Ver Detalhes
-                        </button></div>
-                </div>
-                <div class="card">
-                    <h3>Semana 3-4</h3>
-                    <p>Engajamento com posts e combos pratos e rodizios.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Lançar a primeira 'Noite Temática' e fechar parceria com um influenciador digital local para gerar prova social e atrair novos clientes.">💡
-                            Ver Detalhes</button></div>
-                </div>
-                <div class="card">
-                    <h3>Semana 5-6</h3>
-                    <p>Ativação de campanhas regionais com motoristas app parceiros e oficinas.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Implementar o programa de fidelidade 'Amigos da Massa' e criar um fluxo para capturar contatos de clientes (via QR code na mesa) para iniciar a construção de um relacionamento a longo prazo.">
-                            💡 Ver Detalhes
-                        </button></div>
-                </div>
-                <div class="card">
-                    <h3>Semana 7-8</h3>
-                    <p>Avaliação de métricas, refinamento de estratégia e expansão da base de clientes.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Analisar as métricas iniciais (reservas, avaliações, alcance), refinar as campanhas com base nos dados coletados e planejar novas ofertas para o próximo ciclo de crescimento.">
-                            💡 Ver Detalhes
-                        </button></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Profissões  digitais -->
-        <div class="accordion" id="profissoes digitais">
-            <div class="accordion-header" style="width: 70%;">🧩 Profissões digitais</div>
-            <div class="accordion-content">
-                <div class="card">
-                    <h3>🎯 1. Consultor de Marketing Estratégico</h3>
-                    <p>Responsável por alinhar a estratégia de marketing com os objetivos de negócio do restaurante.
-                    </p>
-                    <p>Usa os planos gerados para orientar toda a equipe.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio do Projeto Inicial: R$ 1.800. Inclui a análise do negócio, mapeamento da jornada do cliente e criação do plano estratégico completo.">
-                            💡 Ver Custo Médio
-                        </button></div>
-                </div>
-                <div class="card">
-                    <h3>📈 2. Gestor de Tráfego Pago</h3>
-                    <p>Executa campanhas geolocalizadas para atrair clientes que estão próximos ao restaurante.</p>
-                    <p>Otimiza o orçamento de mídia para maximizar as visitas e reservas.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio Mensal: R$ 850 + verba de mídia. Inclui a criação, monitoramento e otimização das campanhas no Google e Instagram Ads.">💡
-                            Ver Custo Médio</button></div>
-                </div>
-                <div class="card">
-                    <h3>🧠 3. Copywriter</h3>
-                    <p>Cria textos persuasivos para anúncios, posts e cardápio que despertam o desejo de
-                        experimentar os
-                        pratos.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio do Pacote Inicial: R$ 700. Inclui os textos para a campanha de lançamento e 10 posts para redes sociais.">💡
-                            Ver Custo Médio</button></div>
-                </div>
-                <div class="card">
-                    <h3>🎨 4. Fotógrafo / Designer</h3>
-                    <p>Produz fotos e vídeos de alta qualidade dos pratos e do ambiente.</p>
-                    <p>Cria as artes para o cardápio, posts e anúncios, mantendo a consistência visual.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio da Sessão Fotográfica: R$ 1.200. Inclui a produção e tratamento de 20 fotos profissionais para uso em todo o material de marketing.">
-                            💡 Ver Custo Médio
-                        </button></div>
-                </div>
-                <div class="card">
-                    <h3>📲 5. Social Media</h3>
-                    <p>Planeja e publica o conteúdo, interagindo com a comunidade e respondendo avaliações online.
-                    </p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio Mensal: R$ 900. Inclui agendamento de posts, interação com seguidores e gestão básica da reputação online.">💡
-                            Ver Custo Médio</button></div>
-                </div>
-                <div class="card">
-                    <h3>💬 6. Gestor de Relacionamento (Closer)</h3>
-                    <p>Responsável pelo atendimento no WhatsApp, gestão de reservas e do programa de fidelidade.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio Mensal: R$ 500. Inclui a gestão do canal de reservas e o controle do programa de fidelidade para garantir a satisfação e o retorno dos clientes.">
-                            💡 Ver Custo Médio
-                        </button></div>
-                </div>
-                <div class="card">
-                    <h3>🧑‍💻 7. Implementador de Automação</h3>
-                    <p>Configura o chatbot inicial no WhatsApp para responder dúvidas comuns e agilizar as reservas.
-                    </p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Valor Médio da Configuração Inicial: R$ 450. Inclui a criação do fluxo de perguntas e respostas principais para o atendimento automatizado.">
-                            💡 Ver Custo Médio
-                        </button></div>
-                </div>
-                <div class="card">
-                    <h3>🧭 8. Gestor de Projetos</h3>
-                    <p>Acompanha o progresso das tarefas e garante que prazos e entregáveis sejam cumpridos.</p>
-                    <hr />
-                    <div style="justify-self: center;"><button class="open-modal-btn"
-                            data-improvement="Este serviço geralmente está incluso na consultoria estratégica, garantindo que o plano seja executado com precisão e dentro do cronograma.">
-                            💡 Ver Custo Médio
-                        </button></div>
-                </div>
-
-                <hr style="border: 0; border-top: 1px solid #ddd; margin: 2rem 0 1rem 0;" />
-
-                <p style="text-align: center; font-style: italic; color: #636e72; font-size: 20px;">
-                    O <strong>Assessor de Jornada de Compra</strong> atua como maestro, suprindo todas essas
-                    necessidades,
-                    garantindo o profissionalismo, seguindo a mesma estratégia para transformar a experiência do
-                    cliente
-                    e
-                    gerar mais <strong>Resultados</strong> para o restaurante Show de Massas.
-                </p>
-                <hr />
-                <div style="justify-self: center;"><button class="open-modal-btn"
-                        data-improvement="R$3000,00 ou 36000 anuais" style="justify-self: center;">💡 Ver Custo
-                        Médio</button></div>
-            </div>
-        </div>
-
-        <!-- Dashboard -->
-        <div class="accordion" id="dashboard">
-            <div class="accordion-header" style="width: 60%;">📊 Dashboard de Métricas</div>
-            <div class="accordion-content">
-                <div class="dashboard">
-                    <div class="card">
-                        <h3>⭐ Nota Média (Google)</h3>
-                        <p>4.9 / 5.0</p>
-                    </div>
-                    <div class="card">
-                        <h3>🙋 Novos Clientes / Mês</h3>
-                        <p>+450</p>
-                    </div>
-                    <div class="card">
-                        <h3>🧾 Ticket Médio por Mesa</h3>
-                        <p>R$ 195,00</p>
-                    </div>
-                    <div class="card">
-                        <h3>📈 Taxa de Ocupação (Fins de Semana)</h3>
-                        <p>95%</p>
-                    </div>
-                    <div class="card">
-                        <h3>📲 Reservas via Canais Digitais</h3>
-                        <p>+180 por Mês</p>
-                    </div>
-                    <div class="card">
-                        <h3>🔄 Taxa de Retorno (Fidelidade)</h3>
-                        <p>45%</p>
-                    </div>
-                </div>
-                <p style="justify-self: center;">📈 estimativa de metricas 3~6 meses de atuação do assessor de
-                    jornada
-                    de compra</p>
-            </div>
-        </div>
-
-        <!-- Valores 
-        <div class="accordion" id="valores">
-            <div class="accordion-header" style="width: 50%; display: none;">📊 Serviços</div>
-            <div class="accordion-content">
-                <div class="dashboard">
-                    <div class="card">
-                        <h3>Google Meu Negócio (Start)</h3>
-                        <p>A partir de R$ 300 valor fixo do 1 mês</p>
-                        <h3>Acompanhamento GMN semanal</h3>
-                        <p>A partir de R$ 50/ segundo mês adiante</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Gestor de Automações(Fluxo)</h3>
-                        <p>A partir de R$ 500/mes no plano anual</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Gestor de Automações(Agente IA)</h3>
-                        <p>A partir de R$ 1000/mes no plano anual</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Acessoria de Jornada do cliente</h3>
-                        <p>A partir de R$ 36000 no plano anual</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Lista de Ação da (Acessoria de Jornada do Cliente)</h3>
-                        <p>Suporte de Dúvidas</p>
-                        <p>R$ 500</p>
-                    </div>
-
-                    <div class="card">
-                        <h2>Verbas de mídia a parte do serviço</h2>
-                        <p>Aceitamos:</p>
-                        <p>Débito, Crédito até em 12x com as taxas mecadopago, PIX</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
-        <!-- Chatbot -->
-        <div class="accordion" id="Chatbot" style="display: none;">
-            <div class="accordion-header" style="width: 50%;">Exemplo Chatbot</div>
-            <div class="accordion-content">
-                <div class="dashboard">
-                    <div class="card">
-                        <iframe src="https://typebot.co/recomenda-o-de-produto-yrfrruz"
-                            style="border: none; width: 100%; height: 600px;"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-       <!-- 
-        -->
-    </div>
-    <script src="script.js"></script>
-
-    <div id="improvementModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-header">
-                <h3>💡 Oportunidade de Melhoria</h3>
-            </div>
-            <div class="modal-body">
-                <p id="modal-text"></p>
-            </div>
-        </div>
-
-    </div>
+    </footer>
 </body>
-
 </html>
