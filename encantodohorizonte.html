@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encanto do Horizonte: Sua Experiência Única no Paraíso</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script> 
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Nova paleta de cores pastel para o Encanto do Horizonte
+                        'primary-fundo': '#F5F0EB',          // Um tom de creme/bege claro (pastel)
+                        'secondary-fundo': '#E8F0F3',        // Um tom de azul claro/cinza (pastel)
+                        'verde-destaque': '#4CAF50',         // Verde primário para CTA e detalhes
+                        'verde-destaque-hover': '#66BB6A',   // Verde para hover dos botões
+                        'texto-escuro': '#3A3A3A',           // Texto principal para fundo claro
+                        'texto-claro': '#6A6A6A',            // Texto secundário e corpo para fundo claro
+                        'branco-puro': '#FFFFFF',            // Para textos em fundos escuros (ex: hero)
+                        'card-borda': '#D0D6D7'              // Borda sutil para os cards
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos personalizados para a landing page do hotel */
+        .hero-image {
+            /* Imagem de fundo temática para o hotel. Substitua pela URL da sua imagem ideal. */
+            /* O overlay escuro mantém o texto branco legível. */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/22282A/FFFFFF?text=Encanto+do+Horizonte');
+            background-size: cover;
+            background-position: center;
+            height: 70vh; /* Ajustado para um visual mais imponente */
+        }
+        
+        .benefit-card {
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-poppins antialiased bg-primary-fundo text-texto-claro">
+
+    <!-- Seção Principal (Hero) -->
+    <section class="hero-image flex items-center justify-center text-branco-puro rounded-b-xl shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">Encanto do Horizonte: Sua Experiência Única no Paraíso</h1>
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-8 animate-fade-in-up delay-150">Conforto, Sofisticação e Hospitalidade que Refletem a Cultura Local</h2>
+            <a href="#contato" class="bg-verde-destaque hover:bg-verde-destaque-hover transition-all text-texto-escuro font-bold py-3 px-8 rounded-full inline-block text-lg shadow-lg hover:shadow-xl animate-scale-in">
+                Planeje sua Estadia Inesquecível
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Nosso Diferencial -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-texto-escuro mb-6">Nosso Diferencial: Uma Experiência Além da Hospedagem</h2>
+                <p class="text-lg text-texto-claro mb-8">
+                    Enquanto grandes redes oferecem padronização, nós nos dedicamos a criar memórias. Do primeiro contato à fidelização, cada detalhe é pensado para superar suas expectativas, combinando o luxo com a autenticidade local.
+                </p>
+                <div class="flex justify-center rounded-xl overflow-hidden shadow-lg">
+                    <!-- Imagem para ilustrar o diferencial do hotel (personalização vs. padronização) -->
+                    <!-- Usando placehold.co como placeholder, remova em produção -->
+                    <img src="https://placehold.co/600x400/E8F0F3/3A3A3A?text=Experi%C3%AAncia+Personalizada" alt="Ilustração de experiência personalizada no Encanto do Horizonte" class="rounded-lg shadow-lg" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção O Que Oferecemos -->
+    <section class="py-16 md:py-24 bg-secondary-fundo rounded-xl mx-4 shadow-xl">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-texto-escuro text-center mb-12">O Encanto do Horizonte Oferece:</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Experiências Personalizadas -->
+                <div class="bg-primary-fundo p-8 rounded-xl shadow-md benefit-card border border-card-borda hover:border-verde-destaque">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-xl font-semibold text-texto-escuro mb-3">Experiências Personalizadas</h3>
+                    <p class="text-texto-claro text-justify">Criamos estadias sob medida, entendendo suas preferências para oferecer roteiros, gastronomia e atividades que transformam sua visita em momentos únicos e inesquecíveis.</p>
+                </div>
+                
+                <!-- Card 2: Sustentabilidade Autêntica -->
+                <div class="bg-primary-fundo p-8 rounded-xl shadow-md benefit-card border border-card-borda hover:border-verde-destaque">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h3 class="text-xl font-semibold text-texto-escuro mb-3">Sustentabilidade Autêntica</h3>
+                    <p class="text-texto-claro text-justify">Nosso compromisso eco-friendly vai além do discurso. Adotamos práticas responsáveis, da energia à gastronomia, promovendo um turismo que cuida do planeta e valoriza a cultura local.</p>
+                </div>
+                
+                <!-- Card 3: Vencendo a Sazonalidade -->
+                <div class="bg-primary-fundo p-8 rounded-xl shadow-md benefit-card border border-card-borda hover:border-verde-destaque">
+                    <div class="text-4xl mb-4">☀️</div>
+                    <h3 class="text-xl font-semibold text-texto-escuro mb-3">Eventos e Pacotes Temáticos</h3>
+                    <p class="text-texto-claro text-justify">Desenvolvemos pacotes temáticos e eventos exclusivos para todas as estações, garantindo que o Encanto do Horizonte seja sempre um destino vibrante, com promoções especiais fora da alta temporada.</p>
+                </div>
+                
+                <!-- Card 4: Programa de Fidelidade Premium -->
+                <div class="bg-primary-fundo p-8 rounded-xl shadow-md benefit-card border border-card-borda hover:border-verde-destaque">
+                    <div class="text-4xl mb-4">❤️</div>
+                    <h3 class="text-xl font-semibold text-texto-escuro mb-3">Programa de Fidelidade Exclusivo</h3>
+                    <p class="text-texto-claro text-justify">Nossa paixão por hospitalidade se reflete em um programa de fidelidade exclusivo, com benefícios e experiências desenhadas para recompensar quem escolhe o Encanto do Horizonte repetidamente.</p>
+                </div>
+                
+                <!-- Card 5: Gestão de Feedback Contínuo -->
+                <div class="bg-primary-fundo p-8 rounded-xl shadow-md benefit-card border border-card-borda hover:border-verde-destaque">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold text-texto-escuro mb-3">Escuta e Melhoria Contínua</h3>
+                    <p class="text-texto-claro text-justify">Valorizamos sua opinião para aprimorar constantemente. Implementamos um sistema de feedback eficiente que nos permite adaptar e elevar a qualidade dos nossos serviços, garantindo sua satisfação total.</p>
+                </div>
+                
+                <!-- Card 6: Gastronomia e Bem-estar -->
+                <div class="bg-primary-fundo p-8 rounded-xl shadow-md benefit-card border border-card-borda hover:border-verde-destaque">
+                    <div class="text-4xl mb-4">🍽️</div>
+                    <h3 class="text-xl font-semibold text-texto-escuro mb-3">Gastronomia e Bem-estar</h3>
+                    <p class="text-texto-claro text-justify">Delicie-se com nossa gastronomia exclusiva, que valoriza ingredientes locais, e relaxe em nosso spa. Uma combinação perfeita para nutrir corpo e alma durante sua estadia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossa Abordagem Completa -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-texto-escuro text-center mb-12">Nossa Abordagem: Conectando Você com o Essencial</h2>
+                
+                <div class="bg-secondary-fundo rounded-xl shadow-lg overflow-hidden">
+                    <!-- Imagem para ilustrar o ciclo de experiência do hóspede e sustentabilidade -->
+                    <!-- Usando placehold.co como placeholder, remova em produção -->
+                    <img src="https://placehold.co/700x400/E8F0F3/3A3A3A?text=Ciclo+de+Experi%C3%AAncia+do+H%C3%B3spede" alt="Processo completo da experiência do hóspede no Encanto do Horizonte" class="w-full" loading="lazy">
+                    
+                    <div class="p-8 md:p-10">
+                        <h3 class="text-2xl font-semibold text-texto-escuro mb-4">Por que escolher o Encanto do Horizonte?</h3>
+                        <p class="text-texto-claro mb-6">
+                            Não somos apenas um hotel; somos um convite à descoberta. Diferente de hospedagens convencionais, oferecemos uma imersão cultural e um compromisso com o futuro.
+                        </p>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 bg-verde-destaque rounded-full flex items-center justify-center text-texto-escuro font-bold mr-3 mt-1">✓</div>
+                                <span class="text-texto-claro">Cuidamos de todas as etapas: desde a aquisição até a fidelização e venda de produtos adicionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 bg-verde-destaque rounded-full flex items-center justify-center text-texto-escuro font-bold mr-3 mt-1">✓</div>
+                                <span class="text-texto-claro">Promovemos a sustentabilidade em cada ação, convidando você a fazer parte de um turismo consciente.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 bg-verde-destaque rounded-full flex items-center justify-center text-texto-escuro font-bold mr-3 mt-1">✓</div>
+                                <span class="text-texto-claro">Antecipamos suas necessidades e celebramos momentos especiais, transformando hóspedes em amigos da casa.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 bg-verde-destaque rounded-full flex items-center justify-center text-texto-escuro font-bold mr-3 mt-1">✓</div>
+                                <span class="text-texto-claro">Somos curadores de experiências autênticas, focados em deixar uma marca positiva na sua memória e no ambiente.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato (CTA Final) -->
+    <section id="contato" class="py-16 md:py-24 bg-secondary-fundo text-texto-escuro rounded-xl mx-4 shadow-xl">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Viver uma Experiência Única no Encanto do Horizonte?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-texto-claro">
+                Fale conosco para planejar sua estadia perfeita e descubra o significado da hospitalidade verdadeira.
+            </p>
+            <a href="https://wa.me/558491259602" rel="noopener noreferrer" target="_blank" class="bg-verde-destaque hover:bg-verde-destaque-hover transition-all text-texto-escuro font-bold py-3 px-8 rounded-full inline-block text-lg shadow-lg hover:shadow-xl">
+                Fale Conosco via WhatsApp!
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-secondary-fundo text-texto-claro py-8 rounded-t-xl mt-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2 text-texto-escuro">Encanto do Horizonte</h3>
+                    <p>Onde cada estadia é uma história inesquecível.</p>
+                </div>
+                <div class="text-sm">
+                    © 2025 Encanto do Horizonte. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para suavizar a rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
