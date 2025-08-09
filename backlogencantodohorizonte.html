@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas - Encanto do Horizonte</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F5F0EB; /* Usando a cor primary-fundo da paleta pastel */
+            color: #3A3A3A; /* Usando a cor texto-escuro da paleta pastel */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .card {
+            border-radius: 0.75rem; /* Cantos mais arredondados */
+            border: none;
+        }
+        .card-header {
+            background-color: #4CAF50; /* Verde destaque para o cabeçalho */
+            color: white;
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+            font-weight: 600;
+        }
+        .table thead th {
+            background-color: #E8F0F3; /* secondary-fundo para o cabeçalho da tabela */
+            color: #3A3A3A; /* texto-escuro */
+            font-weight: 600;
+            vertical-align: middle;
+            border-bottom: 2px solid #D0D6D7; /* card-borda */
+        }
+        .table tbody tr:hover {
+            background-color: #F0F5F8; /* Um hover sutil */
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #F8FBFD; /* Um pouco mais claro para linhas ímpares */
+        }
+        .badge {
+            font-size: 0.75em;
+            padding: 0.4em 0.7em;
+            border-radius: 0.5rem; /* Cantos arredondados para tags */
+            background-color: #6A6A6A !important; /* Cor mais neutra para as tags */
+            color: white;
+        }
+        .form-check-input:checked {
+            background-color: #4CAF50; /* Verde destaque para checkbox marcada */
+            border-color: #4CAF50;
+        }
+        .table-success {
+            background-color: #D4EDDA !important; /* Fundo mais claro para tarefas concluídas */
+            opacity: 0.8;
+            text-decoration: line-through;
+            color: #5A5A5A;
+        }
+        .table-success .badge {
+            opacity: 0.6; /* Tags mais opacas para tarefas concluídas */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center mb-4 text-texto-escuro">Backlog - Plano de Ação Encanto do Horizonte</h1>
+        <div class="card shadow">
+            <div class="card-header">
+                <h5 class="mb-0">Tarefas Priorizadas (ICE Score)</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped" id="taskTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Título da Tarefa</th>
+                                <th scope="col">Prioridade (ICE)</th>
+                                <th scope="col">Tags</th>
+                                <th scope="col">Data de Entrega</th>
+                                <th scope="col">Dependências</th>
+                                <th scope="col">Definição de Pronto</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="taskList">
+                            <!-- As tarefas serão carregadas aqui pelo JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Utilizando um Map para armazenar os dados das tarefas.
+            // Isso permite fácil acesso por ID e mantém a ordem de inserção se necessário.
+            const tasksData = new Map([
+                ['task1', {
+                    title: 'Pesquisa de mercado para criar personas',
+                    ice_score: '(14,1)',
+                    tags: ['Marketing', 'Análise de Dados'],
+                    due_date: '23/08/2025',
+                    dependencies: 'Nenhuma',
+                    dod: '3-5 personas definidas com base em dados de hóspedes atuais e pesquisa de mercado.',
+                    completed: false
+                }],
+                ['task2', {
+                    title: 'Criação da jornada do cliente por persona',
+                    ice_score: '(13,8)',
+                    tags: ['Marketing', 'Produto'],
+                    due_date: '30/08/2025',
+                    dependencies: 'Pesquisa de mercado para criar personas',
+                    dod: 'Jornada completa, incluindo pontos de contato e oportunidades de melhoria.',
+                    completed: false
+                }],
+                ['task3', {
+                    title: 'Identificação de "momentos mágicos" na jornada',
+                    ice_score: '(12,6)',
+                    tags: ['Produto', 'Operações'],
+                    due_date: '06/09/2025',
+                    dependencies: 'Criação da jornada do cliente por persona',
+                    dod: 'Lista de 5-10 oportunidades para criar experiências inesquecíveis.',
+                    completed: false
+                }],
+                ['task4', {
+                    title: 'Desenvolvimento de pacotes temáticos',
+                    ice_score: '(14,1)',
+                    tags: ['Marketing', 'Vendas'],
+                    due_date: '13/09/2025',
+                    dependencies: 'Nenhuma',
+                    dod: '3 pacotes temáticos criados (ex: \'Romance à Beira-Mar\', \'Aventura Gastronômica\').',
+                    completed: false
+                }],
+                ['task5', {
+                    title: 'Campanha de email marketing para baixa temporada',
+                    ice_score: '(13,4)',
+                    tags: ['Marketing'],
+                    due_date: '20/09/2025',
+                    dependencies: 'Desenvolvimento de pacotes temáticos',
+                    dod: 'Sequência de 3 emails pronta para ser disparada, com segmentação por persona.',
+                    completed: false
+                }],
+                ['task6', {
+                    title: 'Criação de programa de fidelidade simplificado',
+                    ice_score: '(12,6)',
+                    tags: ['Marketing', 'Vendas'],
+                    due_date: '27/09/2025',
+                    dependencies: 'Nenhuma',
+                    dod: 'Regras e benefícios do programa definidos e comunicados à equipe.',
+                    completed: false
+                }],
+                ['task7', {
+                    title: 'Auditoria e levantamento de práticas sustentáveis',
+                    ice_score: '(14,4)',
+                    tags: ['Sustentabilidade', 'Comunicação'],
+                    due_date: '04/10/2025',
+                    dependencies: 'Nenhuma',
+                    dod: 'Relatório detalhado com todas as ações eco-friendly do hotel.',
+                    completed: false
+                }],
+                ['task8', {
+                    title: 'Criação de conteúdo para redes sociais',
+                    ice_score: '(13,8)',
+                    tags: ['Marketing', 'Comunicação'],
+                    due_date: '11/10/2025',
+                    dependencies: 'Auditoria e levantamento de práticas sustentáveis',
+                    dod: '10 posts e 5 stories focados na comunicação das práticas de sustentabilidade.',
+                    completed: false
+                }],
+                ['task9', {
+                    title: 'Redesenho do site com foco em storytelling sustentável',
+                    ice_score: '(12,8)',
+                    tags: ['Marketing', 'Design'],
+                    due_date: '25/10/2025',
+                    dependencies: 'Criação de conteúdo para redes sociais',
+                    dod: 'Novas seções e textos no site que destacam o compromisso ambiental do hotel.',
+                    completed: false
+                }],
+                ['task10', {
+                    title: 'Treinamento da equipe de atendimento sobre personas',
+                    ice_score: '(11,2)',
+                    tags: ['Recursos Humanos', 'Operações'],
+                    due_date: '01/11/2025',
+                    dependencies: 'Mapeamento de Personas e Jornada do Hóspede',
+                    dod: '2 sessões de treinamento concluídas e material de apoio distribuído.',
+                    completed: false
+                }],
+                ['task11', {
+                    title: 'Implementação de ferramenta de feedback pós-estadia',
+                    ice_score: '(12,6)',
+                    tags: ['Operações', 'Tecnologia'],
+                    due_date: '08/11/2025',
+                    dependencies: 'Nenhuma',
+                    dod: 'Ferramenta configurada para enviar pesquisa de satisfação 24h após o checkout.',
+                    completed: false
+                }],
+                ['task12', {
+                    title: 'Criação de um manual de boas-vindas personalizado',
+                    ice_score: '(10,8)',
+                    tags: ['Operações', 'Produto'],
+                    due_date: '15/11/2025',
+                    dependencies: 'Criação da jornada do cliente por persona',
+                    dod: 'Modelo de manual de boas-vindas com campos personalizáveis, pronto para uso.',
+                    completed: false
+                }]
+            ]);
+
+            const taskList = document.getElementById('taskList');
+
+            /**
+             * Renderiza todas as tarefas na tabela.
+             * As tarefas são ordenadas pelo ICE Score (do maior para o menor).
+             */
+            function renderTasks() {
+                taskList.innerHTML = ''; // Limpa a lista atual para re-renderizar
+                let taskIndex = 0;
+                
+                // Converte o Map para um array, ordena as tarefas pelo ICE Score (decrescente)
+                // e depois itera sobre elas para renderizar.
+                const sortedTasks = Array.from(tasksData.entries()).sort(([, a], [, b]) => {
+                    // Extrai o primeiro número do ICE Score para a ordenação.
+                    // Ex: "(14,1)" -> 14.1
+                    const iceA = parseFloat(a.ice_score.replace('(', '').replace(',', '.'));
+                    const iceB = parseFloat(b.ice_score.replace('(', '').replace(',', '.'));
+                    return iceB - iceA; // Ordena do maior ICE Score para o menor
+                });
+
+                sortedTasks.forEach(([id, task]) => {
+                    taskIndex++;
+                    const row = document.createElement('tr');
+                    // Adiciona classe de Bootstrap para destacar tarefas concluídas
+                    if (task.completed) { // Apenas adiciona a classe se a tarefa estiver concluída
+                        row.classList.add('table-success'); 
+                    }
+                    row.innerHTML = `
+                        <th scope="row">${taskIndex}</th>
+                        <td>${task.title}</td>
+                        <td>${task.ice_score}</td>
+                        <td>${task.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}</td>
+                        <td>${task.due_date}</td>
+                        <td>${task.dependencies}</td>
+                        <td>${task.dod}</td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="task-${id}" ${task.completed ? 'checked' : ''}>
+                                <label class="form-check-label" for="task-${id}">
+                                    ${task.completed ? 'Concluída' : 'Pendente'}
+                                </label>
+                            </div>
+                        </td>
+                    `;
+                    taskList.appendChild(row);
+
+                    // Adiciona um listener de evento para o checkbox de cada tarefa
+                    row.querySelector(`#task-${id}`).addEventListener('change', (event) => {
+                        // Atualiza o status de 'completed' no Map de dados
+                        tasksData.get(id).completed = event.target.checked;
+                        renderTasks(); // Re-renderiza a lista para atualizar o status visual e a ordenação (se necessário)
+                    });
+                });
+            }
+
+            // Renderiza as tarefas pela primeira vez quando a página é carregada
+            renderTasks();
+        });
+    </script>
+</body>
+</html>
