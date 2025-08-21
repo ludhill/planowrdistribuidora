@@ -52,6 +52,10 @@
         .faq-item {
             transition: background-color 0.3s ease;
         }
+        /* Estilo para o placeholder do campo de busca */
+        input[type="search"]::placeholder {
+            color: #929AAB;
+        }
     </style>
 </head>
 
@@ -89,25 +93,25 @@
                 <div class="bg-brancoPuro p-8 rounded-xl shadow-md product-card border-b-4 border-vermelhoRacing">
                     <div class="text-4xl mb-4">⚙️</div>
                     <h3 class="text-xl font-semibold text-textoNoCard mb-3">Peças para Motocicletas</h3>
-                    <p class="text-cinzaMetalico text-justify">Vasta gama de peças de reposição e performance para todos os modelos. Qualidade garantida para o motor, freios e transmissão.</p>
+                    <p class="text-cinzaMetalico text-left">Vasta gama de peças de reposição e performance para todos os modelos. Qualidade garantida para o motor, freios e transmissão.</p>
                 </div>
                 
                 <div class="bg-brancoPuro p-8 rounded-xl shadow-md product-card border-b-4 border-vermelhoRacing">
                     <div class="text-4xl mb-4">🛡️</div>
                     <h3 class="text-xl font-semibold text-textoNoCard mb-3">Equipamentos de Proteção</h3>
-                    <p class="text-cinzaMetalico text-justify">Sua segurança em primeiro lugar. Capacetes, luvas, jaquetas e tudo o que você precisa para pilotar com máxima proteção.</p>
+                    <p class="text-cinzaMetalico text-left">Sua segurança em primeiro lugar. Capacetes, luvas, jaquetas e tudo o que você precisa para pilotar com máxima proteção.</p>
                 </div>
                 
                 <div class="bg-brancoPuro p-8 rounded-xl shadow-md product-card border-b-4 border-vermelhoRacing">
                     <div class="text-4xl mb-4">🔋</div>
                     <h3 class="text-xl font-semibold text-textoNoCard mb-3">Baterias de Alta Performance</h3>
-                    <p class="text-cinzaMetalico text-justify">Energia confiável para sua moto. Oferecemos as melhores marcas de baterias com durabilidade e performance superior.</p>
+                    <p class="text-cinzaMetalico text-left">Energia confiável para sua moto. Oferecemos as melhores marcas de baterias com durabilidade e performance superior.</p>
                 </div>
                 
                 <div class="bg-brancoPuro p-8 rounded-xl shadow-md product-card border-b-4 border-vermelhoRacing">
                     <div class="text-4xl mb-4">⚫</div>
                     <h3 class="text-xl font-semibold text-textoNoCard mb-3">Pneus e Câmaras de Ar</h3>
-                    <p class="text-cinzaMetalico text-justify">Aderência e segurança para qualquer terreno. Pneus de alta qualidade para uso urbano, esportivo e off-road.</p>
+                    <p class="text-cinzaMetalico text-left">Aderência e segurança para qualquer terreno. Pneus de alta qualidade para uso urbano, esportivo e off-road.</p>
                 </div>
             </div>
         </div>
@@ -115,45 +119,45 @@
 
     <section id="faq" class="py-16 md:py-24 bg-cinzaMetalico/5">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-brancoPuro text-center mb-12">Dúvidas Frequentes (FAQ)</h2>
-
-            <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div x-data="{ open: 1 }" class="space-y-4">
-                    <div class="bg-grafiteIntenso rounded-lg shadow-md faq-item">
-                        <button @click="open = (open === 1 ? 0 : 1)" class="w-full text-left p-4 flex justify-between items-center text-brancoPuro font-semibold">
-                            Vocês vendem para pessoa física e jurídica?
-                            <span x-text="open === 1 ? '−' : '+'" class="text-2xl text-vermelhoRacing"></span>
-                        </button>
-                        <div x-show="open === 1" x-collapse class="p-4 pt-0 text-cinzaMetalico">
-                            Sim, atendemos tanto clientes finais (CPF) quanto empresas e oficinas (CNPJ) com condições especiais.
-                        </div>
-                    </div>
-                    <div class="bg-grafiteIntenso rounded-lg shadow-md faq-item">
-                        <button @click="open = (open === 2 ? 0 : 2)" class="w-full text-left p-4 flex justify-between items-center text-brancoPuro font-semibold">
-                            Quais são as formas de pagamento?
-                            <span x-text="open === 2 ? '−' : '+'" class="text-2xl text-vermelhoRacing"></span>
-                        </button>
-                        <div x-show="open === 2" x-collapse class="p-4 pt-0 text-cinzaMetalico">
-                            Aceitamos cartões de crédito, débito, PIX e oferecemos opções de parcelamento. Para clientes CNPJ, consulte nossas condições de faturamento.
-                        </div>
-                    </div>
-                    <div class="bg-grafiteIntenso rounded-lg shadow-md faq-item">
-                        <button @click="open = (open === 3 ? 0 : 3)" class="w-full text-left p-4 flex justify-between items-center text-brancoPuro font-semibold">
-                            Vocês entregam em minha cidade?
-                            <span x-text="open === 3 ? '−' : '+'" class="text-2xl text-vermelhoRacing"></span>
-                        </button>
-                        <div x-show="open === 3" x-collapse class="p-4 pt-0 text-cinzaMetalico">
-                           Sim, temos um sistema de logística eficiente que cobre todo o território nacional. O frete e o prazo de entrega podem variar conforme a sua localidade.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-grafiteIntenso p-8 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brancoPuro mb-4">Dúvidas Frequentes (FAQ)</h2>
+                
+                <div class="bg-grafiteIntenso p-8 rounded-lg shadow-lg flex flex-col items-center justify-center text-center mt-12 mb-16" style="display:none;">
                     <h3 class="text-2xl font-bold text-brancoPuro mb-4">Ainda com Dúvidas?</h3>
                     <p class="text-cinzaMetalico mb-6">Nosso assistente virtual está pronto para ajudar você a encontrar exatamente o que precisa. Inicie uma conversa agora!</p>
                     <div class="w-full h-48 bg-cinzaMetalico/10 rounded-md flex items-center justify-center border-2 border-dashed border-cinzaMetalico/30">
                         <p class="text-cinzaMetalico">Espaço para Incorporação do Chatbot</p>
+                    </div>
+                </div>
+
+                <div x-data="faqData()" class="text-left">
+                    <div class="mb-8">
+                        <input 
+                            type="search" 
+                            x-model.debounce.300ms="searchQuery"
+                            placeholder="Digite aqui para buscar sua dúvida..."
+                            class="w-full bg-grafiteIntenso border-2 border-cinzaMetalico/30 rounded-lg p-4 text-brancoPuro focus:outline-none focus:ring-2 focus:ring-vermelhoRacing transition-all"
+                        >
+                    </div>
+
+                    <div class="space-y-4">
+                        <template x-for="faq in filteredFaqs" :key="faq.id">
+                            <div class="bg-grafiteIntenso rounded-lg shadow-md faq-item">
+                                <button @click="toggle(faq.id)" class="w-full text-left p-4 flex justify-between items-center text-brancoPuro font-semibold">
+                                    <span x-text="faq.question"></span>
+                                    <span x-text="openId === faq.id ? '−' : '+'" class="text-2xl text-vermelhoRacing"></span>
+                                </button>
+                                <div x-show="openId === faq.id" x-collapse.duration.300ms class="p-4 pt-0 text-cinzaMetalico">
+                                    <p x-html="faq.answer"></p>
+                                </div>
+                            </div>
+                        </template>
+                        
+                        <div x-show="filteredFaqs.length === 0" class="text-center bg-grafiteIntenso p-8 rounded-lg">
+                            <p class="text-brancoPuro text-lg">Nenhuma dúvida encontrada.</p>
+                            <p class="text-cinzaMetalico mt-2">Tente buscar com outras palavras ou <a href="#contato" class="text-vermelhoRacing hover:underline">fale conosco</a>.</p>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -166,13 +170,10 @@
                 Visite nossa loja física para um atendimento personalizado e conheça nosso estoque completo.
             </p>
             <div class="w-full h-96 bg-grafiteIntenso rounded-lg shadow-xl border border-cinzaMetalico/20 overflow-hidden flex items-center justify-center">
-                 <!-- <div class="text-cinzaMetalico">Área de incorporação do Google Maps</div> -->
-                   <iframe src="https://storage.googleapis.com/maps-solutions-as27s4th47/locator-plus/cc6q/locator-plus.html"
-                    width="100%" height="100%"
-                    style="border:0;"
-                    loading="lazy">
-                    </iframe>          
-                 </div>
+                <iframe src="https://storage.googleapis.com/maps-solutions-as27s4th47/locator-plus/cc6q/locator-plus.html"
+                 width="100%" height="100%" style="border:0;" loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -191,9 +192,69 @@
     <footer class="bg-grafiteIntenso text-cinzaMetalico py-8 mt-8">
         <div class="container mx-auto px-4 text-center">
             <p class="text-lg font-bold text-brancoPuro">WR Distribuidora</p>
-            <p class="text-sm mt-2">© 2025 WR Distribuidora. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">© <span id="current-year"></span> WR Distribuidora. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Lógica do FAQ com busca
+        function faqData() {
+            return {
+                searchQuery: '',
+                openId: 0,
+                faqs: [
+                    // --- Produtos e Compatibilidade ---
+                    { id: 1, question: 'Como sei se uma peça é compatível com a minha moto?', answer: 'Ótima pergunta! Para garantir 100% de compatibilidade, sempre informamos os modelos e anos na descrição. Se ainda tiver dúvida, chame nossa equipe de especialistas no WhatsApp! Eles confirmarão a peça exata para sua moto.' },
+                    { id: 2, question: 'Esta peça é original, de primeira linha ou paralela?', answer: 'Trabalhamos com total transparência. Nosso catálogo inclui peças genuínas, de linha de montagem (OEM) e de marcas de reposição de primeira linha, todas com qualidade testada e aprovada. A especificação está clara na descrição do produto.' },
+                    { id: 3, question: 'Qual a diferença entre a peça da marca A e a da marca B?', answer: 'Excelente questão! Nossa equipe técnica pode detalhar as especificações e os diferenciais de cada marca. Nossa recomendação sempre levará em conta o melhor custo-benefício para sua necessidade, seja para o uso diário ou para uso ocasional.' },
+                    { id: 4, question: 'O produto da foto é exatamente o que vou receber?', answer: 'Sim! Todas as fotos em nosso catálogo são dos produtos reais que temos em estoque. Nosso compromisso é que você receba exatamente aquilo que comprou, sem surpresas.' },
+                    { id: 5, question: 'Vocês têm peças para motos mais antigas?', answer: 'Com certeza. Temos um estoque amplo que inclui peças para diversos modelos, incluindo clássicos. E, caso não encontre, podemos consultar nossa rede de fornecedores para tentar conseguir a peça para você.' },
+                    { id: 6, question: 'Os kits vêm com todos os itens para instalação?', answer: 'Sim, nossos kits são pensados para facilitar. Na descrição de cada kit, listamos todos os componentes inclusos. Nosso objetivo é fornecer uma solução completa para uma instalação rápida e eficiente.' },
+                    { id: 7, question: 'Qual a origem de fabricação das peças?', answer: 'Trabalhamos com fornecedores globais e nacionais rigorosamente selecionados. A origem pode ser consultada com nossa equipe, mas garantimos que todos os produtos atendem a um alto padrão de qualidade.' },
+                    { id: 8, question: 'Quais tipos de pneus vocês vendem?', answer: 'Nossa especialidade são pneus de alta qualidade para o uso urbano e off-road, atendendo as principais motocicletas do dia a dia. Se você busca durabilidade e segurança para a cidade ou para estradas de terra, temos a opção ideal!' },
+                    { id: 9, question: 'A bateria já vem pronta para uso?', answer: 'Sim! Para sua maior comodidade, todas as nossas baterias são enviadas já ativadas, testadas e prontas para serem instaladas. É só montar e dar a partida!' },
+                    
+                    // --- Compras, Pagamentos e Pedidos ---
+                    { id: 10, question: 'Vocês vendem para pessoa física (CPF)?', answer: 'Sim, nosso foco é atender a todos os clientes que buscam peças de qualidade para suas motocicletas, oferecendo um atendimento completo e especializado.' },
+                    { id: 11, question: 'É possível fazer um orçamento sem compromisso?', answer: 'Claro! Nossa equipe está totalmente à disposição para montar um orçamento detalhado com tudo o que você precisa, sem nenhum compromisso. É só nos enviar sua lista de peças!' },
+                    { id: 12, question: 'Quais são as formas de pagamento?', answer: 'Para sua conveniência, aceitamos PIX e cartões de crédito e débito.' },
+                    { id: 13, question: 'Vocês parcelam no cartão de crédito?', answer: 'Sim, oferecemos a opção de parcelamento no cartão de crédito. Consulte nossa equipe sobre as condições e taxas de juros aplicáveis.' },
+                    { id: 14, question: 'Oferecem desconto para pagamento à vista?', answer: 'Com certeza! Oferecemos um desconto especial para pagamentos em espécie. Para pagamentos via PIX ou cartão, já trabalhamos com preços muito competitivos.' },
+
+                    // --- Envio e Entrega ---
+                    { id: 15, question: 'Vocês entregam em todo o Brasil?', answer: 'Sim! Temos uma logística eficiente e entregamos com segurança e agilidade em todas as regiões do Brasil, principalmente através dos Correios e transportadoras parceiras como a Jadlog.' },
+                    { id: 16, question: 'Qual o valor e prazo do frete para meu CEP?', answer: 'O valor e o prazo são calculados com base na taxa do aplicativo de entrega para envios locais ou conforme a tabela dos Correios/transportadora para outras regiões. Estamos estudando oferecer frete grátis para compras acima de um determinado valor!' },
+                    { id: 17, question: 'Posso retirar meu pedido na loja?', answer: 'Claro! Oferecemos a opção "Compre e Retire". Você pode fazer seu pedido e retirá-lo em nosso balcão, economizando no frete e ganhando tempo.' },
+                    { id: 18, question: 'Como posso rastrear meu pedido?', answer: 'Assim que seu pedido é despachado, você recebe o código de rastreamento por e-mail ou WhatsApp para acompanhar cada etapa da entrega até chegar a você.' },
+                    { id: 19, question: 'Se eu comprar hoje, quando meu pedido será enviado?', answer: 'Somos muito ágeis! Pedidos com pagamento confirmado até as 14h, por exemplo, são despachados no mesmo dia útil. Nossa meta é que você receba suas peças o mais rápido possível.' },
+                    
+                    // --- Garantia e Devoluções ---
+                    { id: 20, question: 'O que acontece se meu pedido chegar danificado?', answer: 'Fique tranquilo. Apesar de raro, caso isso aconteça, entre em contato imediatamente com nossa equipe. Resolveremos a situação com total prioridade, seja com o envio de um novo produto ou com o estorno.' },
+                    { id: 21, question: 'Os produtos têm garantia?', answer: 'Sim, todos os nossos produtos possuem garantia contra defeitos de fabricação. Sua segurança e satisfação são nossas prioridades. O tempo de garantia está especificado na página de cada produto.' },
+                    { id: 22, question: 'Comprei a peça errada, posso trocar?', answer: 'Sim, acontece! Você pode solicitar a troca em até 7 dias após o recebimento, desde que o produto esteja na embalagem original e sem sinais de uso. Nossa equipe te ajudará a encontrar a peça correta, e te orientaremos sobre o processo fiscal da devolução.' },
+                    { id: 23, question: 'Quem arca com o frete em caso de troca ou devolução?', answer: 'Para casos de defeito de fabricação, os custos de frete são por nossa conta. Para trocas por outros motivos, o frete fica por conta do cliente. Mas não se preocupe, sempre buscamos a solução mais justa.' },
+                    { id: 24, question: 'Preciso da nota fiscal para acionar a garantia?', answer: 'Sim, a nota fiscal é o seu comprovante de compra e o documento essencial para qualquer processo de garantia ou troca. Guarde-a com segurança!' }
+                ],
+                
+                toggle(id) {
+                    this.openId = this.openId === id ? 0 : id;
+                },
+
+                get filteredFaqs() {
+                    if (this.searchQuery.trim() === '') {
+                        return this.faqs;
+                    }
+                    return this.faqs.filter(faq => {
+                        const search = this.searchQuery.toLowerCase();
+                        return faq.question.toLowerCase().includes(search) || faq.answer.toLowerCase().includes(search);
+                    });
+                }
+            }
+        }
+
+        // Script para ano dinâmico no rodapé
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
